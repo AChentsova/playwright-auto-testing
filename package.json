@@ -12,11 +12,11 @@
   },
   "license": "ISC",
   "author": "",
-  "type": "commonjs",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "playwright test",
-    "test:example": "playwright test tests/example.spec.js",
+    "test:registration": "playwright test tests/registration.spec.js",
     "test:ui": "playwright test --ui",
     "test:report": "playwright show-report",
     "test:headed": "playwright test --headed",
@@ -29,5 +29,8 @@
   "devDependencies": {
     "@playwright/test": "^1.58.1",
     "@types/node": "^25.2.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.4"
   }
 }
