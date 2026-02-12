@@ -19,6 +19,7 @@
     "test:registration": "playwright test tests/registration.spec.js",
     "test:ui": "playwright test --ui",
     "test:report": "playwright show-report",
+    "test:codegen": "playwright codegen",
     "test:headed": "playwright test --headed",
     "test:debug": "playwright test --debug",
     "codegen": "playwright codegen",
