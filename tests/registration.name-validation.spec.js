@@ -7,10 +7,7 @@ test.describe("Validation for Name and Last Name fields", () => {
   let registrationPage;
   test.beforeEach(async ({ page }) => {
     registrationPage = new RegistrationPage(page);
-    await registrationPage.goto(process.env.BASE_URL, {
-      username: process.env.LOGIN_USERNAME,
-      password: process.env.LOGIN_PASSWORD,
-    });
+    await registrationPage.open();
     await registrationPage.clickSignUpBtn();
   });
 
