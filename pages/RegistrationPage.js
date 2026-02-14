@@ -12,6 +12,10 @@ export class RegistrationPage extends BasePage {
     this.repeatPasswordInput = page.locator("#signupRepeatPassword");
   }
 
+  async open() {
+    await this.goto("/");
+  }
+  
   async clickSignUpBtn() {
     await this.signUpBtn.click();
   }

@@ -5,10 +5,8 @@ export class BasePage {
     this.page = page;
   }
 
-  async goto(url, credentials) {
-    await this.page.goto(url, {
-      httpCredentials: credentials,
-    });
+  async goto(path = "/") {
+    await this.page.goto(path);
   }
 
   async expectUrlContains(partialUrl) {
