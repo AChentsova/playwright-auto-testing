@@ -35,30 +35,57 @@ export default defineConfig({
       testMatch: /.*\.setup\.js/,
     },
     {
-      name: "chromium",
+      name: "chromium-auth",
       use: {
         ...devices["Desktop Chrome"],
         storageState: "storageState.json",
       },
       dependencies: ["setup"],
+      testMatch: /tests\/garage\.spec\.js/,
     },
 
     {
-      name: "firefox",
+      name: "firefox-auth",
       use: {
         ...devices["Desktop Firefox"],
         storageState: "storageState.json",
       },
       dependencies: ["setup"],
+      testMatch: /tests\/garage\.spec\.js/,
     },
 
     {
-      name: "webkit",
+      name: "webkit-auth",
       use: {
         ...devices["Desktop Safari"],
         storageState: "storageState.json",
       },
       dependencies: ["setup"],
+      testMatch: /tests\/garage\.spec\.js/,
+    },
+
+    {
+      name: "chromium",
+      use: {
+        ...devices["Desktop Chrome"],
+      },
+      testIgnore: [/.*\.setup\.js/, /tests\/garage\.spec\.js/],
+    },
+
+    {
+      name: "firefox-auth",
+      use: {
+        ...devices["Desktop Firefox"],
+      },
+      testIgnore: [/.*\.setup\.js/, /tests\/garage\.spec\.js/],
+    },
+
+    {
+      name: "webkit-auth",
+      use: {
+        ...devices["Desktop Safari"],
+      },
+      testIgnore: [/.*\.setup\.js/, /tests\/garage\.spec\.js/],
     },
   ],
 });
