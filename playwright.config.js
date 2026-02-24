@@ -73,7 +73,7 @@ export default defineConfig({
     },
 
     {
-      name: "firefox-auth",
+      name: "firefox",
       use: {
         ...devices["Desktop Firefox"],
       },
@@ -81,7 +81,7 @@ export default defineConfig({
     },
 
     {
-      name: "webkit-auth",
+      name: "webkit",
       use: {
         ...devices["Desktop Safari"],
       },
