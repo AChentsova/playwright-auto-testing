@@ -15,6 +15,9 @@ export default defineConfig({
 
   use: {
     baseURL: process.env.BASE_URL,
+    extraHTTPHeaders: {
+      Accept: "application/vnd.github.v3+json",
+    },
     httpCredentials: {
       username: process.env.LOGIN_USERNAME,
       password: process.env.LOGIN_PASSWORD,
@@ -41,9 +44,8 @@ export default defineConfig({
         storageState: "storageState.json",
       },
       dependencies: ["setup"],
-      testMatch: /tests\/garage\.spec\.js/,
+      testMatch: ["**/auth/**/*.js"],
     },
-
     {
       name: "firefox-auth",
       use: {
@@ -51,9 +53,8 @@ export default defineConfig({
         storageState: "storageState.json",
       },
       dependencies: ["setup"],
-      testMatch: /tests\/garage\.spec\.js/,
+      testMatch: ["**/auth/**/*.js"],
     },
-
     {
       name: "webkit-auth",
       use: {
@@ -61,31 +62,28 @@ export default defineConfig({
         storageState: "storageState.json",
       },
       dependencies: ["setup"],
-      testMatch: /tests\/garage\.spec\.js/,
+      testMatch: ["**/auth/**/*.js"],
     },
-
     {
       name: "chromium",
       use: {
         ...devices["Desktop Chrome"],
       },
-      testIgnore: [/.*\.setup\.js/, /tests\/garage\.spec\.js/],
+      testIgnore: ["**/auth/**", "**/setup/**"],
     },
-
     {
       name: "firefox",
       use: {
         ...devices["Desktop Firefox"],
       },
-      testIgnore: [/.*\.setup\.js/, /tests\/garage\.spec\.js/],
+      testIgnore: ["**/auth/**", "**/setup/**"],
     },
-
     {
       name: "webkit",
       use: {
         ...devices["Desktop Safari"],
       },
-      testIgnore: [/.*\.setup\.js/, /tests\/garage\.spec\.js/],
+      testIgnore: ["**/auth/**", "**/setup/**"],
     },
   ],
 });
