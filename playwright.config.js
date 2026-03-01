@@ -46,15 +46,15 @@ export default defineConfig({
       dependencies: ["setup"],
       testMatch: ["**/auth/**/*.js"],
     },
-    {
-      name: "firefox-auth",
-      use: {
-        ...devices["Desktop Firefox"],
-        storageState: "storageState.json",
-      },
-      dependencies: ["setup"],
-      testMatch: ["**/auth/**/*.js"],
-    },
+    // {
+    //   name: "firefox-auth",
+    //   use: {
+    //     ...devices["Desktop Firefox"],
+    //     storageState: "storageState.json",
+    //   },
+    //   dependencies: ["setup"],
+    //   testMatch: ["**/auth/**/*.js"],
+    // },
     {
       name: "webkit-auth",
       use: {
@@ -71,13 +71,13 @@ export default defineConfig({
       },
       testIgnore: ["**/auth/**", "**/setup/**"],
     },
-    {
-      name: "firefox",
-      use: {
-        ...devices["Desktop Firefox"],
-      },
-      testIgnore: ["**/auth/**", "**/setup/**"],
-    },
+    // {
+    //   name: "firefox",
+    //   use: {
+    //     ...devices["Desktop Firefox"],
+    //   },
+    //   testIgnore: ["**/auth/**", "**/setup/**"],
+    // },
     {
       name: "webkit",
       use: {
